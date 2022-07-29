@@ -20,9 +20,9 @@ class PostViewSet(
     @action(
         methods=["GET"],
         detail=False,
-        url_path="analitics",
+        url_path="analytics",
     )
-    def get_analitics(self, request):
+    def get_analytics(self, request):
         queryset = super().get_queryset()
         date_from = self.request.query_params.get("date_from")
         date_to = self.request.query_params.get("date_to")

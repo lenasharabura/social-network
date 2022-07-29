@@ -23,3 +23,13 @@ class UserSerializer(serializers.ModelSerializer):
             user.save()
 
         return user
+
+
+class UserDetailSerializer(UserSerializer):
+    """Serializer for User model"""
+
+    class Meta(UserSerializer.Meta):
+        fields = ("id", "username", "is_staff", "last_activity", "last_login")
+        read_only_fields = ("id", "is_staff", "last_activity", "last_login")
+
+

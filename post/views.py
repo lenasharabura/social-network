@@ -40,4 +40,4 @@ def like_or_unlike(request, post_id):
         post.likes.remove(request.user)
     else:
         post.likes.add(request.user)
-    return redirect('post:post-list')
+    return redirect("post:post-list")

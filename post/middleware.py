@@ -9,5 +9,7 @@ class SetLastVisitMiddleware(MiddlewareMixin):
     def process_response(request, response):
         if request.user.is_authenticated:
             # Update last activity time after request finished processing.
-            get_user_model().objects.filter(pk=request.user.pk).update(last_activity=now())
+            get_user_model().objects.filter(
+                pk=request.user.pk
+            ).update(last_activity=now())
         return response

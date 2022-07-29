@@ -25,7 +25,6 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class UserDetailSerializer(UserSerializer):
-    """Serializer for User model"""
 
     class Meta(UserSerializer.Meta):
         fields = ("id", "username", "is_staff", "last_activity", "last_login")
